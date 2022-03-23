@@ -1,4 +1,5 @@
-import logo from './logo.svg';
+import logo from "./logo.svg";
+import Test from "./Components/test";
 
 function App() {
   return (
@@ -7,13 +8,9 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p className="underline hover:text-blue-500">
           Edit <code>src/App.js</code> and save to reload.
+          <Test />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
       </header>
