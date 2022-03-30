@@ -5,8 +5,10 @@ function Eingabefeld(props) {
   return (
     <div>
       <label>{props.label}</label>
+      <br />
       <input
         className="form-control
+        border-radius: 5px
         block
         w-220
         h-35
@@ -15,11 +17,11 @@ function Eingabefeld(props) {
         text-base
         font-normal
         border border-solid border-gray-300
-        rounded
-        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+        rounded"
         onChange={(e) => setPollName(e.target.value)}
         value={usepollName}
         placeholder={props.placeholder}
+        type={props.isPassword ? "password" : "text"}
       />
     </div>
   );
