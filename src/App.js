@@ -8,7 +8,7 @@ function App() {
       <Eingabefeld label="Name" isPassword={false} placeholder="&#xf007;" />
       <p className="from-green-50">tets</p>
       <br></br>
-      <Liste gericht="Pizza" price="€20.00" />
+      <Liste gericht="Pizza" price="€20.00" isColor={true} />
     </div>
   );
 }
