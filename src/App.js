@@ -1,19 +1,14 @@
-import logo from "./logo.svg";
-import Test from "./Components/test";
+import Eingabefeld from "./Components/eingabefeld";
+import "../node_modules/font-awesome/css/font-awesome.min.css";
+import Liste from "./Components/liste";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="underline hover:text-blue-500">
-          Edit <code>src/App.js</code> and save to reload.
-          <Test />
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <Eingabefeld label="Name" isPassword={false} placeholder="&#xf007;" />
+      <p className="from-green-50">tets</p>
+      <br></br>
+      <Liste gericht="Pizza" price="€20.00" isColor={true} />
     </div>
   );
 }
