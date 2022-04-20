@@ -1,3 +1,4 @@
+
 import logo from "./logo.svg";
 import ButtonPrimary from "./Components/buttonPrimary";
 import ButtonSecondary from "./Components/buttonSecondary";
@@ -9,17 +10,14 @@ import test from "./Components/test";
 import Card from "./Components/card";
 import img_paparoy from './paparoy.jpg';
 import img_alaturca from './alaturca.jpg';
+import Eingabefeld from "./Components/eingabefeld";
+import "../node_modules/font-awesome/css/font-awesome.min.css";
+import Liste from "./Components/liste";
 
 function App() {
   return (
     <div className="App">
-      <Header1 />
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-        <Card name="Papa Roy" bild={img_paparoy} />
-        <Card name="A la Turca" bild={img_alaturca} />
-        <Card name="Pizza Olive"/>
-      </div>
-  </div>
+    </div>
   );
 }
 
