@@ -13,10 +13,14 @@ import img_alaturca from './alaturca.jpg';
 import Eingabefeld from "./Components/eingabefeld";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import Liste from "./Components/liste";
+import MainPage from "./Components/mainpage";
+import HeaderBig from "./Components/header_big";
+import EndPage from "./Components/endpage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App ">
+      <EndPage />
     </div>
   );
 }
