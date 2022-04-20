@@ -1,3 +1,15 @@
+
+import logo from "./logo.svg";
+import ButtonPrimary from "./Components/buttonPrimary";
+import ButtonSecondary from "./Components/buttonSecondary";
+import './App.css';
+import p_logo_dark from './pizza_logo_dark.png'
+import p_logo_light from './pizza_logo_light.png'
+import Header1 from "./Components/header_1";
+import test from "./Components/test";
+import Card from "./Components/card";
+import img_paparoy from './paparoy.jpg';
+import img_alaturca from './alaturca.jpg';
 import Eingabefeld from "./Components/eingabefeld";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import Liste from "./Components/liste";
@@ -5,10 +17,6 @@ import Liste from "./Components/liste";
 function App() {
   return (
     <div className="App">
-      <Eingabefeld label="Name" isPassword={false} placeholder="&#xf007;" />
-      <p className="from-green-50">tets</p>
-      <br></br>
-      <Liste gericht="Pizza" price="€20.00" isColor={true} />
     </div>
   );
 }
