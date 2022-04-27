@@ -4,14 +4,14 @@ function Eingabefeld(props) {
   const [usepollName, setPollName] = useState("");
   return (
     <div>
-      <label>{props.label}</label>
       <br />
       <input
         className="form-control
         border-radius: 5px
         block
-        w-220
+        w-full
         h-35
+        p-5
         px-3
         py-1.5
         text-base
