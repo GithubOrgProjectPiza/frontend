@@ -7,7 +7,7 @@ import Card from "./card";
 
 function MainPage() {
   return (
-    <div class="overflow-hidden">
+    <div>
       <Header1 />
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
         <Card name="Papa Roy" bild={img_paparoy} />
