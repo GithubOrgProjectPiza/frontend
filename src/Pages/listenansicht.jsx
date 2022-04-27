@@ -23,11 +23,10 @@ function Listenansicht(props) {
     <div>
       <Header1></Header1>
 
-      <img class="sm: w-full md: w-full md: h-15" src={props.bild || bild} alt="Papa Roy"></img>
+      <img class="sm: w-full h-auto" src={props.bild || bild} alt="Papa Roy"></img>
       {listen}
-      <div class="sm: grid grid-cols-2 items-center">
-        <div class="col-start-1 col-end-1"></div>
-        <ButtonPrimary name="Warenkorb" class="col-start-2 col-end-2 place-content-end"></ButtonPrimary>
+      <div class="grid grid-cols-4 ">
+        <ButtonPrimary name="Warenkorb" class="col-start-3 col-end-3 place-content-end"></ButtonPrimary>
       </div>
     </div>
   );
