@@ -12,7 +12,7 @@ function Listenansicht(props) {
 
   //Daten von Backend erforderlich + Bild vom jeweiligen Restaurant erforderlich
   for (let index = 0; index < number; index++) {
-    listen.push(<Liste gericht="Pizza" price="12,99€" isColor={color_liste}></Liste>);
+    listen.push(<Liste gericht="Pizza" price="12,99€" isColor={color_liste} icon_button="+"></Liste>);
     if (color_liste == true) {
       color_liste = false;
     } else {
@@ -22,11 +22,12 @@ function Listenansicht(props) {
   return (
     <div>
       <Header1></Header1>
-
-      <img class="sm: w-full h-auto" src={props.bild || bild} alt="Papa Roy"></img>
+      <div className="bg-slate-400">
+        <img class="sm: w-full h-auto" src={props.bild || bild} alt="Papa Roy"></img>
+      </div>
       {listen}
-      <div class="grid grid-cols-4 ">
-        <ButtonPrimary name="Warenkorb" class="col-start-3 col-end-3 place-content-end"></ButtonPrimary>
+      <div class="flex justify-end ">
+        <ButtonPrimary name="Warenkorb"></ButtonPrimary>
       </div>
     </div>
   );
