@@ -12,13 +12,13 @@ import img_alaturca from "./alaturca.jpg";
 import Eingabefeld from "./Components/eingabefeld";
 import "../node_modules/font-awesome/css/font-awesome.min.css";
 import Liste from "./Components/liste";
-import Anmeldefeld from "./Pages/anmeldepage";
 import Anmeldepage from "./Pages/anmeldepage";
+import Registrierung from "./Pages/registrierung";
 
 function App() {
   return (
     <div className="App">
-      <Anmeldepage></Anmeldepage>
+      <Registrierung></Registrierung>
     </div>
   );
 }

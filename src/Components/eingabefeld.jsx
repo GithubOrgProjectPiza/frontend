@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Eingabefeld(props) {
   const [usepollName, setPollName] = useState("");
   return (
-    <div>
+    <div class="pb-2">
       <br />
       <input
         className="form-control
