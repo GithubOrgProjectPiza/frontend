@@ -3,15 +3,15 @@ import React, { useState } from "react";
 function Eingabefeld(props) {
   const [usepollName, setPollName] = useState("");
   return (
-    <div>
-      <label>{props.label}</label>
+    <div class="pb-2">
       <br />
       <input
         className="form-control
         border-radius: 5px
         block
-        w-220
+        w-full
         h-35
+        p-5
         px-3
         py-1.5
         text-base
