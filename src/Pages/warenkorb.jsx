@@ -34,14 +34,13 @@ function Warenkorb(props) {
         <img src={warenkorb_image} alt="Warenkorbicon"></img>
         <label class="font-medium leading-tight text-3xl mt-0 mb-2">Warenkorb</label>
       </div>
-      <br></br>
+      +<br></br>
       <div class="flex sm:flex-row md:flex-row-reverse md:justify-between pt-6 pb-6 bg-primary">
         <img src={restaurant_image} alt="Restauranticon"></img>
         <label class="font-medium leading-tight text-3xl mt-0 mb-2 text-white">
           {props.restaurant || "Restaurant"}
         </label>
       </div>
-
       <br></br>
       <br></br>
       {listen}
