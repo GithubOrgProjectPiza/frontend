@@ -17,17 +17,19 @@ import Warenkorb from "./Pages/warenkorb";
 import Listenansicht from "./Pages/listenansicht";
 import "./App.css";
 import MainPage from "./Components/mainpage";
+import EndPage from "./Components/endpage";
 
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 const queryClient = new QueryClient();
 
+/*<QueryClientProvider client={queryClient}>
+        <MainPage></MainPage>
+      </QueryClientProvider>*/
 function App() {
   return (
     <div className="App">
-      <QueryClientProvider client={queryClient}>
-        <MainPage></MainPage>
-      </QueryClientProvider>
+      <Registrierung></Registrierung>
     </div>
   );
 }
