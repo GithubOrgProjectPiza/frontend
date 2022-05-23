@@ -23,13 +23,13 @@ import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 const queryClient = new QueryClient();
 
-/*<QueryClientProvider client={queryClient}>
-        <MainPage></MainPage>
-      </QueryClientProvider>*/
 function App() {
+  console.log(process.env);
   return (
     <div className="App">
-      <Registrierung></Registrierung>
+      <QueryClientProvider client={queryClient}>
+        <Listenansicht></Listenansicht>
+      </QueryClientProvider>
     </div>
   );
 }

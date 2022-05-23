@@ -8,7 +8,7 @@ import { useQuery } from "react-query";
 
 function MainPage() {
   const { isLoading, error, data } = useQuery("repoData", () =>
-    fetch("http://10.10.2.132:3000/restaurant").then((res) => res.json())
+    fetch(process.env.REACT_APP_SERVER_IP + "restaurant").then((res) => res.json())
   );
   let listen = [];
 

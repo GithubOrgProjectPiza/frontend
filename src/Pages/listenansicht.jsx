@@ -3,16 +3,24 @@ import ButtonPrimary from "../Components/buttonPrimary";
 import Header1 from "../Components/header_1";
 import Liste from "../Components/liste";
 import bild from "../paparoy_liste.png";
+import { useQuery } from "react-query";
 
 function Listenansicht(props) {
   var color_liste = true;
-  var number = 2;
   var run = 0;
   let listen = [];
 
-  //Daten von Backend erforderlich + Bild vom jeweiligen Restaurant erforderlich
-  for (let index = 0; index < number; index++) {
-    listen.push(<Liste gericht="Pizza" price="12,99€" isColor={color_liste} icon_button="+"></Liste>);
+  const { isLoading, error, data } = useQuery("repoData", () =>
+    fetch(process.env.REACT_APP_SERVER_IP + "pizza/").then((res) => res.json())
+  );
+
+  if (isLoading) return "Loading...";
+  if (error) return "An error has occurred: " + error.message;
+
+  for (let index = 0; index < data.length; index++) {
+    listen.push(
+      <Liste gericht={data[index].name} price={data[index].description} isColor={color_liste} icon_button="+"></Liste>
+    );
     if (color_liste == true) {
       color_liste = false;
     } else {
