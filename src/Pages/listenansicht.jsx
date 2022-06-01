@@ -35,11 +35,16 @@ function Listenansicht(props) {
     <div>
       <Header1></Header1>
       <div className="bg-slate-400">
-        <img class="sm: w-full h-auto" src={props.bild || bild} alt="Papa Roy"></img>
+        <img class="sm: w-full h-auto" src={props.bild || bild} alt="Speisekartenlogo"></img>
       </div>
       {listen}
-      <div class="flex justify-end ">
-        <ButtonPrimary name="Warenkorb"></ButtonPrimary>
+      <div className="flex justify-between">
+        <div>
+          <ButtonPrimary name="Warenkorb"></ButtonPrimary>
+        </div>
+        <div>
+          <ButtonPrimary name="Restaurants"></ButtonPrimary>
+        </div>
       </div>
     </div>
   );
