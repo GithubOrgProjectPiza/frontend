@@ -3,6 +3,7 @@ import ButtonPrimary from "../Components/buttonPrimary";
 import Header1 from "../Components/header_1";
 import Liste from "../Components/liste";
 import bild from "../paparoy_liste.png";
+import { Link } from "react-router-dom";
 
 function Listenansicht(props) {
   var color_liste = true;
@@ -27,7 +28,9 @@ function Listenansicht(props) {
       </div>
       {listen}
       <div class="flex justify-end ">
-        <ButtonPrimary name="Warenkorb"></ButtonPrimary>
+        <Link to="/warenkorb">
+          <ButtonPrimary name="Warenkorb"></ButtonPrimary>
+        </Link>
       </div>
     </div>
   );

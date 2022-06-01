@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ButtonPrimary from "../Components/buttonPrimary";
 import Eingabefeld from "../Components/eingabefeld";
 import bild from "../pizza_logo_dark.png";
+import { Link } from "react-router-dom";
 
 function Registrierung(props) {
   return (
@@ -50,8 +51,12 @@ function Registrierung(props) {
       <br></br>
       <br></br>
       <div class="sm: flex justify-between">
-        <ButtonPrimary name="Registieren"></ButtonPrimary>
-        <ButtonPrimary name="Anmelden"></ButtonPrimary>
+        <Link to="/">
+          <ButtonPrimary name="Registieren"></ButtonPrimary>
+        </Link>
+        <Link to="/anmeldung">
+          <ButtonPrimary name="Anmelden"></ButtonPrimary>
+        </Link>
       </div>
     </div>
   );

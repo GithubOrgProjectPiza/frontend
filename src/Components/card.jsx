@@ -2,6 +2,7 @@ import React from "react";
 import bild from "../paparoy.jpg";
 import ButtonPrimary from "./buttonPrimary";
 import Ueberschrift2 from "./ueberschrift2";
+import { Link } from "react-router-dom";
 
 function Card(props) {
   return (
@@ -13,7 +14,9 @@ function Card(props) {
         <div class="font-bold text-xl flex justify-start m-3">
           <Ueberschrift2 name={props.name} />
         </div>
-        <ButtonPrimary name="Speisekarte" />
+        <Link to={props.href}>
+          <ButtonPrimary name="Speisekarte" />
+        </Link>
       </div>
     </div>
   );

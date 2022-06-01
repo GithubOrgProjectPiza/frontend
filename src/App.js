@@ -16,12 +16,23 @@ import Registrierung from "./Pages/registrierung";
 import Warenkorb from "./Pages/warenkorb";
 import Listenansicht from "./Pages/listenansicht";
 import "./App.css";
+import EndPage from "./Pages/endpage";
+import MainPage from "./Pages/mainpage";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-    
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="endpage" element={<EndPage />} />
+        <Route path="liste" element={<Listenansicht />} />
+        <Route path="registrierung" element={<Registrierung />} />
+        <Route path="anmeldung" element={<Anmeldepage />} />
+        <Route path="warenkorb" element={<Warenkorb />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
