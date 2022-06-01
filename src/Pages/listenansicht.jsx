@@ -3,16 +3,28 @@ import ButtonPrimary from "../Components/buttonPrimary";
 import Header1 from "../Components/header_1";
 import Liste from "../Components/liste";
 import bild from "../paparoy_liste.png";
+import { useQuery } from "react-query";
 
 function Listenansicht(props) {
   var color_liste = true;
-  var number = 2;
-  var run = 0;
+  var id = 1;
   let listen = [];
 
-  //Daten von Backend erforderlich + Bild vom jeweiligen Restaurant erforderlich
-  for (let index = 0; index < number; index++) {
-    listen.push(<Liste gericht="Pizza" price="12,99€" isColor={color_liste} icon_button="+"></Liste>);
+  const { isLoading, error, data } = useQuery("repoData", () =>
+    fetch(process.env.REACT_APP_SERVER_IP + "restaurant/" + id).then((res) => res.json())
+  );
+
+  if (isLoading) return "Loading...";
+  if (error) return "An error has occurred: " + error.message;
+
+  for (let index = 0; index < data.pizzas.length; index++) {
+    listen.push(
+      <Liste
+        gericht={data.pizzas[index].name}
+        price={data.pizzas[index].price}
+        isColor={color_liste}
+        icon_button="+"></Liste>
+    );
     if (color_liste == true) {
       color_liste = false;
     } else {
@@ -23,11 +35,16 @@ function Listenansicht(props) {
     <div>
       <Header1></Header1>
       <div className="bg-slate-400">
-        <img class="sm: w-full h-auto" src={props.bild || bild} alt="Papa Roy"></img>
+        <img class="sm: w-full h-auto" src={props.bild || bild} alt="Speisekartenlogo"></img>
       </div>
       {listen}
-      <div class="flex justify-end ">
-        <ButtonPrimary name="Warenkorb"></ButtonPrimary>
+      <div className="flex justify-between">
+        <div>
+          <ButtonPrimary name="Restaurants"></ButtonPrimary>
+        </div>
+        <div>
+          <ButtonPrimary name="Warenkorb"></ButtonPrimary>
+        </div>
       </div>
     </div>
   );

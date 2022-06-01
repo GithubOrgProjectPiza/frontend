@@ -16,11 +16,20 @@ import Registrierung from "./Pages/registrierung";
 import Warenkorb from "./Pages/warenkorb";
 import Listenansicht from "./Pages/listenansicht";
 import "./App.css";
+import MainPage from "./Components/mainpage";
+import EndPage from "./Components/endpage";
+
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
+  console.log(process.env);
   return (
     <div className="App">
-    
+      <QueryClientProvider client={queryClient}>
+        <Listenansicht></Listenansicht>
+      </QueryClientProvider>
     </div>
   );
 }
