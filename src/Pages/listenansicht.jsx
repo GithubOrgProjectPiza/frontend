@@ -4,11 +4,12 @@ import Header1 from "../Components/header_1";
 import Liste from "../Components/liste";
 import bild from "../paparoy_liste.png";
 import { useQuery } from "react-query";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-function Listenansicht(props) {
+function Listenansicht() {
+  var props = useParams();
   var color_liste = true;
-  var id = 1;
+  var { id } = props;
   let listen = [];
 
   const { isLoading, error, data } = useQuery("repoData", () =>
@@ -17,6 +18,8 @@ function Listenansicht(props) {
 
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
+
+  console.log(data);
 
   for (let index = 0; index < data.pizzas.length; index++) {
     listen.push(

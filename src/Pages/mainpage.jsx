@@ -3,7 +3,7 @@ import Header1 from "../Components/header_1";
 import ButtonPrimary from "../Components/buttonPrimary";
 import img_paparoy from "../paparoy.jpg";
 import img_alaturca from "../alaturca.jpg";
-import Card from "./card";
+import Card from "../Components/card";
 import { useQuery } from "react-query";
 
 function MainPage() {
@@ -17,15 +17,13 @@ function MainPage() {
 
   for (let index = 0; index < data.length; index++) {
     console.log(data);
-    listen.push(<Card name={data[index].name} bild={img_paparoy} domain={data[index].domain} />);
+    listen.push(<Card name={data[index].name} bild={img_paparoy} href={"/liste/" + data[index].id} />);
   }
 
   return (
     <div>
       <Header1 />
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4" href="/liste">
-        {listen}
-      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">{listen}</div>
     </div>
   );
 }
