@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ButtonPrimary from "../Components/buttonPrimary";
 import Eingabefeld from "../Components/eingabefeld";
 import bild from "../pizza_logo_dark.png";
+import { Link } from "react-router-dom";
 
 function Anmeldepage(props) {
   return (
@@ -30,8 +31,12 @@ function Anmeldepage(props) {
       <br></br>
       <br></br>
       <div class="flex justify-between md:justify-center">
-        <ButtonPrimary name="Registieren"></ButtonPrimary>
-        <ButtonPrimary name="Anmelden"></ButtonPrimary>
+        <Link to="/registrierung">
+          <ButtonPrimary name="Registieren"></ButtonPrimary>
+        </Link>
+        <Link to="/">
+          <ButtonPrimary name="Anmelden"></ButtonPrimary>
+        </Link>
       </div>
     </div>
   );

@@ -22,13 +22,22 @@ import EndPage from "./Components/endpage";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 const queryClient = new QueryClient();
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  console.log(process.env);
   return (
     <div className="App">
       <QueryClientProvider client={queryClient}>
-        <Listenansicht></Listenansicht>
+        <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="endpage" element={<EndPage />} />
+        <Route path="liste" element={<Listenansicht />} />
+        <Route path="registrierung" element={<Registrierung />} />
+        <Route path="anmeldung" element={<Anmeldepage />} />
+        <Route path="warenkorb" element={<Warenkorb />} />
+      	</Routes>
+    	</BrowserRouter>
       </QueryClientProvider>
     </div>
   );

@@ -1,7 +1,8 @@
 import React from "react";
-import ButtonSecondary from "./buttonSecondary";
-import HeaderBig from "./header_big";
-import Ueberschrift2 from "./ueberschrift2";
+import ButtonSecondary from "../Components/buttonSecondary";
+import HeaderBig from "../Components/header_big";
+import Ueberschrift2 from "../Components/ueberschrift2";
+import { Link } from "react-router-dom";
 
 function EndPage() {
   return (
@@ -14,7 +15,9 @@ function EndPage() {
           <Ueberschrift2 name="Vielen Dank!" />
           <Ueberschrift2 name="Deine Bestellung wurde erfolgreich aufgegeben." />
           <div class="p-5"></div>
-          <ButtonSecondary name="Zur Startseite" />
+          <Link to="/">
+            <ButtonSecondary name="Zur Startseite" />
+          </Link>
         </div>
       </div>
     </div>

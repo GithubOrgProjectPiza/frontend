@@ -1,6 +1,6 @@
 import React from "react";
 import Header1 from "../Components/header_1";
-import ButtonPrimary from "./buttonPrimary";
+import ButtonPrimary from "../Components/buttonPrimary";
 import img_paparoy from "../paparoy.jpg";
 import img_alaturca from "../alaturca.jpg";
 import Card from "./card";
@@ -23,7 +23,7 @@ function MainPage() {
   return (
     <div>
       <Header1 />
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">{listen}</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4" href="/liste">{listen}</div>
     </div>
   );
 }

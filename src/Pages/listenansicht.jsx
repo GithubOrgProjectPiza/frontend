@@ -4,6 +4,7 @@ import Header1 from "../Components/header_1";
 import Liste from "../Components/liste";
 import bild from "../paparoy_liste.png";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 
 function Listenansicht(props) {
   var color_liste = true;
@@ -38,13 +39,11 @@ function Listenansicht(props) {
         <img class="sm: w-full h-auto" src={props.bild || bild} alt="Speisekartenlogo"></img>
       </div>
       {listen}
-      <div className="flex justify-between">
-        <div>
-          <ButtonPrimary name="Restaurants"></ButtonPrimary>
-        </div>
-        <div>
+      <div class="flex justify-end ">
+      		<ButtonPrimary name="Restaurants"></ButtonPrimary>
+        <Link to="/warenkorb">
           <ButtonPrimary name="Warenkorb"></ButtonPrimary>
-        </div>
+        </Link>
       </div>
     </div>
   );
