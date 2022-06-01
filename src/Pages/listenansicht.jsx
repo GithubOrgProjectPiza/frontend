@@ -21,7 +21,7 @@ function Listenansicht(props) {
     listen.push(
       <Liste
         gericht={data.pizzas[index].name}
-        price={data.pizzas[index].description}
+        price={data.pizzas[index].price}
         isColor={color_liste}
         icon_button="+"></Liste>
     );
@@ -40,10 +40,10 @@ function Listenansicht(props) {
       {listen}
       <div className="flex justify-between">
         <div>
-          <ButtonPrimary name="Warenkorb"></ButtonPrimary>
+          <ButtonPrimary name="Restaurants"></ButtonPrimary>
         </div>
         <div>
-          <ButtonPrimary name="Restaurants"></ButtonPrimary>
+          <ButtonPrimary name="Warenkorb"></ButtonPrimary>
         </div>
       </div>
     </div>
