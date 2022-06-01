@@ -7,19 +7,23 @@ import { useQuery } from "react-query";
 
 function Listenansicht(props) {
   var color_liste = true;
-  var run = 0;
+  var id = 1;
   let listen = [];
 
   const { isLoading, error, data } = useQuery("repoData", () =>
-    fetch(process.env.REACT_APP_SERVER_IP + "pizza/").then((res) => res.json())
+    fetch(process.env.REACT_APP_SERVER_IP + "restaurant/" + id).then((res) => res.json())
   );
 
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
 
-  for (let index = 0; index < data.length; index++) {
+  for (let index = 0; index < data.pizzas.length; index++) {
     listen.push(
-      <Liste gericht={data[index].name} price={data[index].description} isColor={color_liste} icon_button="+"></Liste>
+      <Liste
+        gericht={data.pizzas[index].name}
+        price={data.pizzas[index].description}
+        isColor={color_liste}
+        icon_button="+"></Liste>
     );
     if (color_liste == true) {
       color_liste = false;
