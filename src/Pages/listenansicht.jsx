@@ -40,7 +40,7 @@ function Listenansicht(props) {
       </div>
       {listen}
       <div class="flex justify-end ">
-      		<ButtonPrimary name="Restaurants"></ButtonPrimary>
+        <ButtonPrimary name="Restaurants"></ButtonPrimary>
         <Link to="/warenkorb">
           <ButtonPrimary name="Warenkorb"></ButtonPrimary>
         </Link>

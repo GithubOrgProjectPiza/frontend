@@ -29,15 +29,15 @@ function App() {
     <div className="App">
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="endpage" element={<EndPage />} />
-        <Route path="liste" element={<Listenansicht />} />
-        <Route path="registrierung" element={<Registrierung />} />
-        <Route path="anmeldung" element={<Anmeldepage />} />
-        <Route path="warenkorb" element={<Warenkorb />} />
-      	</Routes>
-    	</BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainPage />} />
+            <Route path="endpage" element={<EndPage />} />
+            <Route path="liste" element={<Listenansicht />} />
+            <Route path="registrierung" element={<Registrierung />} />
+            <Route path="anmeldung" element={<Anmeldepage />} />
+            <Route path="warenkorb" element={<Warenkorb />} />
+          </Routes>
+        </BrowserRouter>
       </QueryClientProvider>
     </div>
   );

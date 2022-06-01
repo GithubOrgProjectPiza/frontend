@@ -23,7 +23,9 @@ function MainPage() {
   return (
     <div>
       <Header1 />
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4" href="/liste">{listen}</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4" href="/liste">
+        {listen}
+      </div>
     </div>
   );
 }
