@@ -4,10 +4,11 @@ import ButtonRound from "./buttonRound";
 function Liste(props) {
   var gericht = props.gericht;
   var price = props.price;
+  var id = props.id;
   let icon_button = props.icon_button;
   var key = 0;
   var i = props.index;
-  const gericht1 = { name: gericht, preis: price, index: i };
+  const gericht1 = { name: gericht, preis: price, index: i, id };
 
   //localStorage.setItem("gericht", JSON.stringify(gericht1));
 
@@ -25,7 +26,6 @@ function Liste(props) {
           name={icon_button}
           onaction={() => {
             if (props.icon_button == "-") {
-              console.log(i);
               let gerichte = JSON.parse(localStorage.getItem("gerichte"));
               gerichte.splice(i, 1);
               props.setlisten(gerichte);
@@ -33,7 +33,6 @@ function Liste(props) {
             } else {
               const gerichte = JSON.parse(localStorage.getItem("gerichte")) ?? [];
               gerichte.push(gericht1);
-              console.log(gerichte);
               localStorage.setItem("gerichte", JSON.stringify(gerichte));
               i++;
             }

@@ -19,13 +19,15 @@ function Listenansicht() {
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
 
-  console.log(data);
+  if (!(typeof data.pizzas == "object")) return "Loading...";
 
   for (let index = 0; index < data.pizzas.length; index++) {
     listen.push(
       <Liste
         gericht={data.pizzas[index].name}
         price={data.pizzas[index].price}
+        id={data.pizzas[index].id}
+        key={data.pizzas[index].id}
         isColor={color_liste}
         icon_button="+"></Liste>
     );
@@ -42,11 +44,17 @@ function Listenansicht() {
         <img class="sm: w-full h-auto" src={props.bild || bild} alt="Speisekartenlogo"></img>
       </div>
       {listen}
-      <div class="flex justify-end ">
-        <ButtonPrimary name="Restaurants"></ButtonPrimary>
-        <Link to="/warenkorb">
-          <ButtonPrimary name="Warenkorb"></ButtonPrimary>
-        </Link>
+      <div class="flex justify-between ">
+        <div>
+          <Link to="/">
+            <ButtonPrimary name="Restaurants"></ButtonPrimary>
+          </Link>
+        </div>
+        <div>
+          <Link to="/warenkorb">
+            <ButtonPrimary name="Warenkorb"></ButtonPrimary>
+          </Link>
+        </div>
       </div>
     </div>
   );

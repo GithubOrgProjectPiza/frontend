@@ -6,6 +6,7 @@ import kassa_image from "../kassa_icon.png";
 import Liste from "../Components/liste";
 import ButtonSecondary from "../Components/buttonSecondary";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 function Warenkorb(props) {
   //Übergabe vom Namen des Restaurants (merken von Cards?!)
@@ -18,12 +19,10 @@ function Warenkorb(props) {
   var color_liste = true;
   var sum = 0;
   var number = localStorage;
-  console.log(number);
 
   const [listen, setlisten] = useState(JSON.parse(localStorage.getItem("gerichte")) ?? []);
 
   var liste = [];
-  console.log(listen);
 
   /*for (let index = 0; index < number; index++) {
     var name = listen.at(index).name;
@@ -38,7 +37,6 @@ function Warenkorb(props) {
 
   //console.log(JSON.parse(localStorage.getItem("gerichte")) ?? []);
   listen.forEach(function (g, i) {
-    console.log(g.preis, g.name, g.index);
     liste.push(
       <Liste
         gericht={g.name}
@@ -56,6 +54,19 @@ function Warenkorb(props) {
     var s = Number(g.preis.substring(0, g.preis.length - 1).replace(",", "."));
     sum += s;
   });
+
+  const onSubmit = () => {
+    console.log("hallo");
+    let gerichte = JSON.parse(localStorage.getItem("gerichte")).map((a) => a.id);
+    axios
+      .post(
+        process.env.REACT_APP_SERVER_IP + "order/",
+        { pizzas: gerichte },
+        { headers: { Authorization: `Bearer ${localStorage.getItem("token")}` } }
+      )
+      .then((data) => console.log(data))
+      .catch((e) => console.log(e));
+  };
 
   return (
     <div className="mb-5">
@@ -88,7 +99,7 @@ function Warenkorb(props) {
           <ButtonSecondary name="Zurück"></ButtonSecondary>
         </Link>
         <Link to="/endpage">
-          <ButtonSecondary name="Bestätigen"></ButtonSecondary>
+          <ButtonSecondary name="Bestätigen" onAction={onSubmit}></ButtonSecondary>
         </Link>
       </div>
     </div>

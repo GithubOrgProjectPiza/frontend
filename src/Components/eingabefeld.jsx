@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function Eingabefeld(props) {
-  const [usepollName, setPollName] = useState("");
   return (
     <div class="pb-2">
       <br />
@@ -18,8 +17,8 @@ function Eingabefeld(props) {
         font-normal
         border border-solid border-gray-300
         rounded"
-        onChange={(e) => setPollName(e.target.value)}
-        value={usepollName}
+        onChange={props.onChange}
+        value={props.value}
         placeholder={props.placeholder}
         type={props.isPassword ? "password" : "text"}
       />

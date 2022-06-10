@@ -16,7 +16,6 @@ function MainPage() {
   if (error) return "An error has occurred: " + error.message;
 
   for (let index = 0; index < data.length; index++) {
-    console.log(data);
     listen.push(<Card name={data[index].name} bild={img_paparoy} href={"/liste/" + data[index].id} />);
   }
 
